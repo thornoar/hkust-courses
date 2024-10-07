@@ -1,0 +1,210 @@
+\documentclass[a4paper, 12pt]{article}
+
+\input{preamble}
+
+\theoremstyle{plain}
+\newtheorem{problem}{Problem}
+\newtheorem*{problem*}{Problem}
+\newtheorem{lemma}{Lemma}
+\newtheorem*{lemma*}{Lemma}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+\usepackage{tgschola}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+
+\geometry{top = 1in, bottom = 1in, left = 0.7in, right = 0.7in}
+
+\pagestyle{fancy}
+\fancyhead[l]{MATH2001 Homework, Part 1}
+\fancyhead[r]{Roman Maksimovich}
+\setlength{\headheight}{14.49998pt}
+\renewcommand{\headrulewidth}{1pt}
+
+\usepackage{amsmath}
+
+\begin{document}
+
+{
+    \noindent
+    \def\arraystretch{1.7}
+    \setlength\arrayrulewidth{1.2pt}
+    \begin{tabularx}{\textwidth}{|l}
+        { \LARGE \bfseries MATH2001 Homework, Part 1 }\\
+        \hline
+        { \large Roman Maksimovich, SID: 21098878 }
+        % { \large Due date: \today }
+    \end{tabularx}
+}
+\begin{problem}
+    Let $ \{a_n\}_{n = 0}^{\infty} $ be a sequence defined by the following recursive formula:
+    \begin{equation}
+        \begin{cases}
+            a_0 = 1, a_1 = 2,\\
+            a_{n+1} = 3 a_n - 2 a_{n-1}.
+        \end{cases}
+        \label{recursive}
+    \end{equation}
+    Make a conjecture for the general closed form formula for $ a_n $ and then prove it using induction.
+\end{problem}
+\begin{proof}[Solution]
+    We will first list a few elements of the sequence: $ 1, 2, 4, 8, 16, ... $ From this, it is natural to assume that $ a_n = 2^n $. Let us prove that by induction over $n$.
+    \begin{itemize}
+        \item \textit{Base:} $n = 0$ and $n = 1$. Obvious.
+        \item \textit{Step:} $n, n+1 \to n+2$. By Formula (\ref{recursive}), we have
+            \[
+                a_{n+2} = 3 a_{n+1} - 2 a_{n} = 3 \cdot 2^{n+1} - 2 \cdot 2^n = 3 \cdot 2^{n+1} - 2^{n+1} = 2 \cdot 2^{n+1} = 2^{n+2},
+            \]
+    \end{itemize}
+    q.e.d.
+\end{proof}
+
+\begin{problem}
+    Prove that the sum of the internal angles of an $n$-gon is equal to $(n-2) \cdot \pi$.
+\end{problem}
+\begin{proof}[Solution]
+    We will assume that the sum of the angles in a triangle is $180$ degrees. We will also take for granted that in any polygon there can be found an internal diagonal (that is, one that lies entirely within the polygon). Denote the sum of the angles in a polygon $P$ by $\Sigma (P)$. We will now do a proof by induction over $n$.
+    \begin{itemize}
+        \item $n = 3$. In case the $n$-gon is a triangle, the statement is trivial: $(n-2) \cdot 180 = 180$.
+        \item $1,2,...,n \to n+1$. Consider an $(n+1)$-gon $P$ (with $n \geqslant 3$) consider one of its internal diagonals. This diagonal will dissect the polygon into two polygons $Q$, $L$ with $m$ and $k$ sides, respectively, such that:
+        \begin{enumerate}
+            \item $m + k - 2 = n+1$, since the two vertices of the diagonal are double-counted;
+            \item $m < n+1$ and $k < n+1$, since both $m$ and $k$ are greater than $3$.
+            \item $\Sigma (P) = \Sigma (Q) + \Sigma (L)$, since the diagonal is internal and it dissects the angles of its vertices inside the polygon.
+        \end{enumerate}
+        With these properties at hand, we can write
+            \[ \Sigma (P) = \Sigma (Q) + \Sigma (L) = (m - 2) \cdot 180 + (k - 2) \cdot 180 = (m + k - 4) \cdot 180 = (n - 2) \cdot 180. \]
+    \end{itemize}
+    q.e.d.
+\end{proof}
+
+\begin{problem}
+    Let $n > 2$ be an integer. Prove that if $n$ is not a prime number, then $n$ is divisible by a prime number.
+\end{problem}
+\begin{proof}[Solution]
+    Let $n$ be a composite number and let $A$ be the set of all $k \in \N$ such that $k \mid n$ and $1 < k < n$. We have that $A$ is non-empty. Let $p$ be the least element in $A$ (we take for granted that every non-empty subset of $\N$ has a least element). Now, suppose that $p$ is not prime. Then, there is a number $l$ such that $l \mid p$ and $1 < l < p$. Hence, $l \mid n$ (since $l | p$ and $p \mid n$) and $1 < l < p < n$, meaning that $l \in A$. However, $l$ is less than the least element of $A$, namely $p$. Contradiction.
+\end{proof}
+
+\begin{problem}~
+    \begin{itemize}
+        \item[(a)] Suppose that $f \colon A \to B$ is bijective. Prove that there exists a unique bijection $g \colon B \to A$ such that $g(f(a)) = a$ for all $a \in A$ and $f(g(b)) = b$ for all $b \in B$.
+        \item[(b)] Suppose $f \colon A \to B$ such that there exists a $g \colon B \to A$ such that $g(f(a)) = a$ for all $a \in A$. Are $f$ and $g$ bijective? If not, what can you say about $f$ and $g$?
+    \end{itemize}
+\end{problem}
+\begin{proof}[Solution]~
+    \begin{itemize}
+        \item[(a)]
+            We first prove the existence of such $g$. Let $b \in B$ be arbitrary. Since $f$ is bijective, there is a unique pre-image $a$ such that $f(a) = b$. We define the image $g(b)$ as $a$. Since $a$ is unique for every $b$, $g$ is indeed a function. Automatically, we have $f(g(b)) = b$ for all $b \in B$. Furthermore, by definition we have
+            \[
+                g(B) = \{ g(b) \mid b \in B \} = \{ a \in A \mid \exists b \in B: f(a) = b \} = A,
+            \]
+            meaning that $g$ is surjective. Now, consider two elements $b_1, b_2 \in B$ such that $g(b_1) = g(b_2)$. Now, we have
+            \[
+                b_1 = f(g(b_1)) = f(g(b_2)) = b_2,
+            \]
+            which proves that $g$ is injective. Hence, $g$ is bijective. Now, consider an arbitrary $a \in A$. For the element $f(a) \in B$, $a$ is the only pre-image (since $f$ is injective), meaning that $g(f(a))$ must be equal to $a$. This concludes the proof of existence.
+
+            Now, assume that two functions $g_1$, $g_2$ satisfy the necessary conditions. For all $b \in B$, we have
+            \[ g_1(b) = g_2(f(g_1(b))) = g_2(b), \]
+            and hence $g_1 = g_2$.
+
+        \item[(b)]
+            Assume $f$ and $g$ as stated in the problem. We can prove that $f$ is injective: let $a_1, a_2 \in A$ be such that $f(a_1) = f(a_2)$. Then,
+            \[ a_1 = g(f(a_1)) = g(f(a_2)) = a_2. \]
+            However, $f$ may not be surjective. For example, consider $f \colon \{0\} \to \{0,1\}$ such that $f(0) = 0$, and $g \colon \{0, 1\} \to \{0\}$ such that $g(0) = 0$ and $g(1) = 0$. Clearly, $g(f(0)) = 0$, however $f$ is not surjective, since $1 \in \{0,1\}$ has no pre-image.
+
+            Analogously, we may prove that $g$ is surjective: let $a \in A$ be arbitrary. Then, take $b = f(a)$. We now have
+            \[ a = g(f(a)) = g(b), \]
+            meaning that $b$ is a pre-image of $a$ under $g$. However, $g$ may not be injective, and we can use the same counter-example to show that.
+    \end{itemize}
+\end{proof}
+
+\begin{problem}
+    Let $A$ and $B$ be finite sets. Prove that $|A \times B| = |A| \cdot |B|$.
+\end{problem}
+\begin{proof}[Solution]
+    Let the cardinalities of $A$ and $B$ be $n$ and $m$ respectively. We can thus write $A = \{a_1, a_2, ..., a_n\}$ and $B = \{b_1, b_2, ..., b_m\}$. Now, $A \times B$ can be represented as the union of $n$ sets of the form $A_i = \{ (a_i, b_j) \mid b_j \in B \}$. The cardinality of each set $A_i$ is $m$, and thus we have $|A \times B| = n \times m = |A| \times |B|$.
+\end{proof}
+
+\begin{problem}
+    Let $A$ be a finite set. Then $|2^A| = 2^{|A|}$, where $2^A$ denotes the power set of $A$.
+\end{problem}
+\begin{proof}[Solution]
+    We will use induction on the cardinality of $A$.
+    \begin{itemize}
+        \item
+            $|A| = 0$. In this case, $A = \varnothing$, and we have $|2^A| = |\{\varnothing\}| = 1 = 2^0$, in accordance with the statement.
+        \item
+            $|A| = n+1$, and the statement has been proven for sets of cardinality $n$. We represent $A$ as $B \cup \{x\}$, where $x \nin B$. Thus, $|B| = n$ and we have $|2^B| = 2^{n}$. Each subset $U \subset A$ can uniquely fall in one of two categories:
+            \begin{enumerate}
+                \item $x \in U$ (category $\mathcal{C}_1$);
+                \item $x \nin U$ (category $\mathcal{C}_2$).
+            \end{enumerate}
+            We note that all subsets of category $\mathcal{C}_2$ are exactly the subsets of $B$, and thus $|\mathcal{C}_2|$ = $|2^B| = 2^n$. Furthermore, every subset $U \in \mathcal{C}_1$ is uniquely represented as $U' \cup \{x\}$, where $U' \in \mathcal{C}_2$. Therefore, we have $|\mathcal{C}_1| = |\mathcal{C}_2|$. Finally, we write
+            \[ |2^A| = |\mathcal{C}_1| + |\mathcal{C}_2| = 2 \cdot |\mathcal{C}_1| = 2 \cdot 2^n = 2^{n+1}, \]
+            and we are done.
+    \end{itemize}
+\end{proof}
+
+\begin{problem}
+    Let $A$ and $B$ be finite sets. Then,
+    \[ |A \cup B| = |A| + |B| - |A \cap B|. \] 
+\end{problem}
+\begin{proof}[Solution]
+    Let $C = A \cap B$. Then we can represent $A \cup B$ as $A \cup (B \setminus C)$. Since $A$ and $B \setminus C$ are not intersecting, we trivially see that $|A \cup (B \setminus C)| = |A| + |B \setminus C|$. Now, since $C$ is a subset of $B$, we also conclude that $|B \setminus C| = |B| - |C|$. Finally, we write
+    \[
+        |A \cup B| = |A| + |B \setminus (A \cap B)| = |A| + |B| - |A \cap B|,
+    \] q.e.d. 
+\end{proof}
+
+\begin{problem}
+    Suppose we would like to prove that the statements $A(n)$ are true for all integers $n \geqslant 1$. Then, we can use the following variant of the proof by induction technique:
+    \begin{itemize}
+        \item[--] Prove that $A(1)$ is true;
+        \item[--] Prove that if $A(n)$ is true then $A(2n)$ is true;
+        \item[--] Prove that if $A(n)$ is true then $A(n-1)$ is true.
+    \end{itemize}
+    \begin{itemize}
+        \item[(a)] Explain intuitively why this technique works.
+        \item[(b)]
+            Use this technique to prove the general AM-GM inequality: $\forall a_1, a_2, ..., a_n \geqslant 0$, we have
+            \[ \frac{a_1 + a_2 + ... + a_n}{n} \geqslant \sqrt[n]{a_1 a_2 ... a_n}. \] 
+    \end{itemize}
+\end{problem}
+\begin{proof}[Solution]~
+    \begin{itemize}
+        \item[(a)]
+            With the first and second conditions of the induction scheme, we can prove that $A(2^k)$ holds for all $k \in \N$. Now, for every $n \in \N$, there is a $k$ suck that $n \leqslant 2^k$. Then, from the truth of $A(2^k)$ we induce $A(2^k-1)$, then $A(2^k - 2)$, and all the way until we reach $A(n)$. In other words, $A(n)$ can indeed be proven for all $n \in \N$.
+        \item[(b)]
+            We apply the above described induction algorithm. Let $A(n)$ denote the AM-GM inequality for sequences of length $n$. We first establish $A(1)$, which is trivial, since $\frac{a_1}{1} = a_1 = \sqrt[1]{a_1}$, i.e. both parts are equal. Now, we will require a supplemental lemma:
+            \begin{lemma} \label{amgm}
+                For all $a, b \geqslant 0$ we have
+                \[ \frac{a+b}{2} \geqslant \sqrt[2]{ab}. \] 
+            \end{lemma}
+            \begin{proof}
+                Multiplying by 2 and squaring both sides, we get
+                \begin{align*}
+                    (a + b)^2 &\geqslant 4ab,\\
+                    a^2 + 2ab + b^2 &\geqslant 4ab,\\
+                    a^2 - 2ab + b^2 &\geqslant 0,\\
+                    (a-b)^2 &\geqslant 0,
+                \end{align*}
+                which is obviuosly true.
+            \end{proof}
+
+            Now, assuming that $A(n)$ holds, we will prove $A(2n)$. Let $a_1, a_2, ..., a_{2n} \geqslant 0$ be arbitrary. We write
+            \begin{gather*}
+                \frac{a_1 + a_2 + ... + a_{2n}}{2n} = \frac{\frac{a_1 + a_2 + ... + a_n}{n} + \frac{a_{n+1} + a_{n+2} + ... + a_{2n}}{n}}{2} \geqslant \frac{\sqrt[n]{a_1 a_2 ... a_n} + \sqrt[n]{a_{n+1} a_{n+2} ... a_{2n}}}{2} \geqslant \\[10pt]
+                \geqslant \sqrt[2]{\sqrt[n]{a_1 a_2 ... a_n} \cdot \sqrt[n]{a_{n+1} a_{n+2} ... a_{2n}}} = \sqrt[2n]{a_1 a_2 ... a_{2n}},\\[-10pt]
+            \end{gather*}
+            and we are done. Lastly, we have to show $A(n) \Longrightarrow A(n-1)$. Consider arbitrary $a_1, a_2, ..., a_{n-1} \geqslant 0$. Denote their arithmetic mean by $A := \frac{a_1 + a_2 + ... + a_{n-1}}{n-1}$. Using the induction hypothesis $A(n)$, we have
+            \begin{align*}
+                \frac{a_1 + a_2 + ... + a_{n-1}}{n-1} = \frac{a_1 + a_2 + ... + a_{n-1} + A}{n} &\geqslant \sqrt[n]{a_1 a_2 ... a_{n-1} A} = (a_1 a_2 ... a_{n-1})^{\frac{1}{n}} \left(\frac{a_1 + a_2 + ... + a_{n-1}}{n-1}\right)^{\frac{1}{n}},\\[5pt]
+                \left(\frac{a_1 + a_2 + ... + a_{n-1}}{n-1}\right)^{\frac{n-1}{n}} &\geqslant (a_1 a_2 ... a_{n-1})^{\frac{1}{n}},\\[10pt]
+                \frac{a_1 + a_2 + ... + a_{n-1}}{n-1} &\geqslant (a_1 a_2 ... a_{n-1})^{\frac{1}{n-1}} = \sqrt[n-1]{a_1 a_2 ... a_{n-1}}.\\[-5pt]
+            \end{align*}
+            Hence, the AM-GM inequality indeed holds for all $n \in \N$.
+    \end{itemize}
+\end{proof}
+
+\end{document}
