@@ -1,0 +1,36 @@
+\documentclass[a4paper, 12pt]{article}
+
+\input{preamble}
+
+\theoremstyle{plain}
+\newtheorem{problem}{Problem}
+\newtheorem*{problem*}{Problem}
+\newtheorem{lemma}{Lemma}
+\newtheorem*{lemma*}{Lemma}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+\usepackage{tgschola}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+
+\geometry{top = 1in, bottom = 1in, left = 0.7in, right = 0.7in}
+
+\pagestyle{fancy}
+\fancyhead[l]{MATH2001 Homework}
+\fancyhead[r]{Roman Maksimovich}
+\setlength{\headheight}{14.49998pt}
+\renewcommand{\headrulewidth}{1pt}
+
+\usepackage{amsmath}
+
+\newcommand{\heading}[1]{
+    \noindent
+    \def\arraystretch{1.7}
+    \setlength\arrayrulewidth{1.2pt}
+    \begin{tabularx}{\textwidth}{|l}
+        { \LARGE \bfseries MATH2001 Homework, Part #1 }\\
+        \hline
+        { \large Roman Maksimovich, SID: 21098878 }
+        % { \large Due date: \today }
+    \end{tabularx}
+}

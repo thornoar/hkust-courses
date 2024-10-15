@@ -1,0 +1,210 @@
+\include{../template}
+
+\begin{document}
+    
+\heading{2}
+
+\begin{problem}
+    Let $S$ be a set and $f \colon A \to B$ a map from $A$ to $B$. Define $f_S : \Hom(B, S) \to \Hom(A, S)$ given by $\alpha \to \alpha \circ f$.
+    \begin{enumerate}
+        \item[(a)]
+            Show that if $f$ is injective, then $f_S$ is surjective for any non-empty $S$.
+            \begin{proof}[Solution]
+                % If $S$ is empty, consider two cases:
+                % \begin{itemize}
+                %     \item $A = \varnothing$. Then $\Hom(A,S)$ consists of one element, 
+                % \end{itemize}
+                Assume that $f$ is injective and consider an arbitrary $g \in \Hom(A, S)$. Since $S$ is non-empty, we can also fix an element $s^* \in S$. Define a map $\alpha \colon B \to S$ as follows:
+                \[
+                    \forall b \in B: \hspace{0.5cm} \alpha(b) = \begin{cases}
+                        g(f^{-1}(b)), \mbox{ if } b \in f(A),\\
+                        s*, \mbox{ otherwise }
+                    \end{cases}
+                \]
+                If $b \in f(A)$, the pre-image $f^{-1}(b) \in A$ is unique since $f$ is injective. Now, consider the composition $\alpha \circ f$:
+                \[
+                    \forall a \in A: \hspace{0.5cm} (\alpha \circ f)(a) = \alpha(f(a)) = g(f^{-1}(f(a))) = g(a),
+                \]
+                meaning that $g = \alpha \circ f$, or $g = f_S(\alpha)$. Hence, $f_S$ is surjective.
+            \end{proof}
+
+        \item[(b)]
+            Show that if $f$ is surjective, then $f_S$ is injecctive for any $S$.
+            \begin{proof}[Solution]
+                Assume that $f$ is surjective. Consider two functions $\alpha_1$ and $\alpha_2$ from $\Hom(B,S)$, such that $f_S(\alpha_1) = f_S(\alpha_2)$ (if $\Hom(B,S)$ is empty, then injectivity is trivial). In other words, we have $\alpha_1 \circ f = \alpha_2 \circ f$. Since $f$ is surjective, there is a function $g \colon B \to A$ such that
+                \[
+                    \forall b \in B: \hspace{0.5cm} f(g(b)) = b.
+                \]
+                % This is due to the fact that every $b \in B$ has a pre-image
+                Now, let $b \in B$ be arbitrary. We write
+                \[
+                    \alpha_1(b) = \alpha_1(f(g(b))) = \alpha_2(f(g(b))) = \alpha_2(b).
+                \]
+                Hence, $\alpha_1 = \alpha_2$, and we conclude that $f_S$ is injective.
+            \end{proof}
+
+        \item[(c)]
+            Are the converses of the above statements true?
+            \begin{proof}[Solution]
+                No, both converses are false.\\
+                % The reason is that the unique map $\varepsilon \colon \varnothing \to \varnothing$ is both injective and surjective.\\
+                For part (a), take $A = \{1,2\}$, $B = \{1\}$, and $S = \{1\}$. We see that $\Hom(A,S)$ and $\Hom(B,S)$ both contain only one element, so $f_S$ is bijective (in particuler, surjective) for any $f$. Still, the only map $f \colon A \to B$ is clearly not injective, since $f(1) = f(2) = 1$.\\
+                For part (b), take the opposite: $A = \{1\}$, $B = \{1,2\}$, and $S = \{1\}$. The map $f_S$ is again bijective and thus injecctive for any $f$. However, the map $f \colon A \to B, \hspace{1mm} f(1) = 1$ is not surjective.
+            \end{proof}
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    Let $f \colon X \to Y$ be a function. Define a relation on $X$ given by $x_1 \sim x_2$ if and only if $f(x_1) = f(x_2)$.
+    \begin{enumerate}
+        \item[(a)] Show that $\sim$ is an equivalence relation on $X$.
+            \begin{proof}[Solution]~
+                \begin{itemize}
+                    \item \textbf{Reflexivity.}
+                        $f(x) = f(x) \Longrightarrow x \sim x$, $\forall x \in X$.
+                    \item \textbf{Symmetricity.}
+                        Trivial, since $f(x) = f(y) \Longleftrightarrow f(y) = f(x)$.
+                    \item \textbf{Transitivity.} Trivial, since if $f(x) = f(y)$ and $f(y) = f(z)$, then $f(x) = f(z)$.
+                \end{itemize}
+            \end{proof}
+        \item[(b)] Construct a bijection between the quotient set $X/\sim$ and the image $\mathrm{Im} f$.
+            \begin{proof}[Solution]
+                Consider a class $[x] \in X/\sim$. Define $\overline{f}([x]) = f(x)$. The fuction $\overline{f}$ is well-defined since
+                \[
+                    [x_1] = [x_2] \Longleftrightarrow x_1 \sim x_2 \Longleftrightarrow f(x_1) = f(x_2),
+                \]
+                i.e. the image of $[x]$ does not depend on the choice of class representative.\\
+                We see that $\overline{f}$ is injective:
+                \[ \overline{f}([x_1]) = \overline{f}([x_2]) \Longrightarrow f(x_1) = f(x_2) \Longrightarrow x_1 \sim x_2 \Longrightarrow [x_1] = [x_2]. \]
+                We also see that $\overline{f}$ is surjective:
+                \[ \forall y \in \mathrm{Im} f: \hspace{0.5cm} y = f(f^{-1}(y)) = \overline{f}([f^{-1}(y)]), \]
+                i.e. every element $y \in \mathrm{Im} f$ has a pre-image in the form of $[f^{-1}(y)]$, where $f^{-1}(y)$ is one of the pre-images of $y$ due to $f$.\\
+                Hence, $\overline{f}$ is bijective, and we are done.
+            \end{proof}
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    For each fixed $n \in \mathbb{Z}$, consider the equivalence relation $a \sim b \Longleftrightarrow a-b \equiv n\ (\mathrm{mod}\ n)$ (or $a-b \equiv 0$ for short). Denote $\mathbb{Z}/n \mathbb{Z} = \mathbb{Z}/\sim$.
+    \begin{enumerate}
+        \item[(a)] Show that $\sim$ is an equivalence relation and describe $\mathbb{Z}/n \mathbb{Z}$ with $n = 0,1,2$.
+            \begin{proof}[Solution]
+                Reflexivity is trivial: $x - x = 0 \equiv 0\ (\mathrm{mod}\ n)$. Symmetricity is also trivial, since if $x$ is a multiple of $n$, then $-x$ is also a multiple of $n$, and so
+                \[
+                    a \sim b \Longrightarrow a - b \equiv 0 \Longrightarrow b - a \equiv 0 \Longrightarrow b \sim a.
+                \]
+                Transitivity is trivial as well, since the sum of multiples of $n$ is a multiple of $n$, and $a - c = (a - b) + (b - c)$. Hence if $a \sim b$ and $b \sim c$, then $a \sim c$.\\
+                If $n = 0$, then $\mathbb{Z}/n \mathbb{Z} \cong \mathbb{Z}$, since no number apart from 0 is a multiple of 0, and all equivalence classes consist of one element.\\
+                If $n = 1$, then $\mathbb{Z}/n \mathbb{Z} \cong \{1\}$, since all numbers are multiples of 1, and thus there is only one equivalence class, i.e. $\mathbb{Z}$.\\
+                If $n = 2$, then $\mathbb{Z}/n \mathbb{Z} \cong \{1,2\}$, since there are two equivalence classes: the even and the odd numbers. This is obvious since $a - b \cong 0\ (\mathrm{mod}\ 2)$ iff $a$ and $b$ are of the same parity.
+            \end{proof}
+
+        \item[(b)] Define operations $+$ and $\cdot$ on $\mathbb{Z}/n \mathbb{Z}$ such that the quitient map $\pi$ satisfies $\pi(a+b) = \pi(a) + \pi(b)$ and $\pi(ab) = \pi(a)\pi(b)$ for all $a,b \in \mathbb{Z}$.
+            \begin{proof}[Solution]
+                Take $[a], [b] \in \mathbb{Z}/n\mathbb{Z}$. Define $[a] + [b] = [a + b]$ and $[a] \cdot [b] = [a \cdot b]$. To prove correctness, we consider $a' \sim a$ and $b' \sim b$. We have $n \mid (a' - a)$ and $n \mid (b' - b)$. Hence
+                \[
+                    n \mid ((a' - a) + (b' - b)) = ((a' + b') - (a + b)),
+                \]
+                and $(a + b) \sim (a' + b')$. Moreover,
+                \[
+                    n \mid ((a' - a)b' + (b' - b)a) = (a'b' - ab' + ab' - ab) = (a'b' - ab),
+                \]
+                and so $ab \sim a'b'$. In other words, both addition and multiplication are defined correctly.\\
+                By definition, we also see that $$\pi(a+b) = [a+b] = [a] + [b] = \pi(a) + \pi(b)$$ and $$\pi(ab) = [ab] = [a] \cdot [b] = \pi(a) \cdot \pi(b).$$
+            \end{proof}
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    Let $m,n \in \mathbb{N}$ such that $m + n = 0$. Prove that $m = n = 0$.
+\end{problem}
+\begin{proof}[Solution]
+    Consider two cases:
+    \begin{itemize}
+        \item $n = 0$. Then $m + n = m + 0 = n = 0$, and hence $m = n = 0$.
+        \item $n = S(k)$. Then $m + n = m + S(k) = S(n + k) = 0$, which is impossible due one of Peano's axioms, stating that $S(n) \ne 0$ for all $n \in \mathbb{N}$.
+    \end{itemize}
+    These two cases are exhaustive due to the last axiom.
+\end{proof}
+
+\begin{problem}
+    Prove that the multiplication operation $[a,b] \cdot [c,d] := [ac+bd, ad+bc]$ is well-defined.
+\end{problem}
+\begin{proof}[Solution]
+    Let $[a',b'] = [a,b]$ and $[c',d'] = [c,d]$. That means, $a' + b = a + b'$ and $c' + d = c + d'$.
+    Utilizing the commutativity, associativity, and distribution properties of multiplication on $\mathbb{N}$, we have
+    \begin{align*}
+        a(c + d') + b(c' + d) &= a(c' + d) + b(c + d'),\\
+        (ac + bd) + (ad' + bc)' &= (ac' + bd)' + (ad + bc),\\
+        [ac + bd, ad + bc] &= [ac' + bd', ad' + bc'],\\
+        [a,b] \cdot [c,d] &= [a,b] \cdot [c',d'].
+    \end{align*}
+    By using a totally similar derivation, we see that $[a,b] \cdot [c',d'] = [a',b'] \cdot [c',d']$.\\
+    Hence, by transitivity, $[a,b] \cdot [c,d] = [a',b'] \cdot [c',d']$.
+\end{proof}
+
+\begin{problem}
+    Prove that the operation $\cdot$ (multiplication) on $\mathbb{Z}$ satisfies the following properties:
+    \begin{enumerate}
+        \item[(a)] Distributivity.
+            \begin{proof}
+                Let $m = [m_1, m_2]$, $n = [n_1, n_2]$, $p = [p_1, p_2]$. We have
+                \begin{gather*}
+                    m \cdot (n + p) = [m_1, m_2] \cdot [n_1 + p_1, n_2 + p_2] =\\=
+                    [m_1(n_1+p_1)+m_2(n_2+p_2), m_2(n_1+p_1)+m_1(n_2+p_2)] =\\=
+                    [m_1n_1+m_2n_2+m_1p_1+m_2p_2, m_2n_1+m_1n_2+m_2p_1+m_1p_2] =\\=
+                    [m_1n_1+m_2n_2, m_2n_1+m_1n_2] + [m_1p_1+m_2p_2, m_2p_1+m_1p_2] =\\=
+                    [m_1, m_2] \cdot [n_1, n_2] + [m_1, m_2] \cdot [p_1, p_2] =\\=
+                    m \cdot n + m \cdot p.
+                \end{gather*}
+            \end{proof}
+
+        \item[(b)] Associativity.
+            \begin{proof}
+                Let $m = [m_1, m_2]$, $n = [n_1, n_2]$, $p = [p_1, p_2]$. We have
+                \begin{gather*}
+                    m \cdot (n \cdot p) = [m_1,m_2] \cdot ([n_1,n_2] \cdot [p_1,p_2]) =\\=
+                    [m_1,m_2] \cdot [n_1p_1+n_2p_2, n_1p_2+n_2p_1] =\\=
+                    [m_1(n_1p_1+n_2p_2)+m_2(n_1p_2+n_2p_1), m_1(n_1p_2+n_2p_1)+m_2(n_1p_1+n_2p_2)] =\\=
+                    [m_1n_1p_1+m_1n_2p_2+m_2n_1p_2+m_2n_2p_1, m_1n_1p_2+m_1n_2p_1+m_2n_1p_1+m_2n_2p_2] =\\=
+                    [(m_1n_1+m_2n_2)p_1+(m_1n_2+m_2n_1)p_2, (m_1n_1+m_2n_2)p_2+(m_1n_2+m_2n_1)p_1] =\\=
+                    [m_1n_1+m_2n_2, m_1n_2+m_2n_1] \cdot [p_1,p_2] =\\=
+                    ([m_1,m_2] \cdot [n_1,n_2]) \cdot [p_1,p_2] =\\=
+                    (m \cdot n) \cdot p.
+                \end{gather*}
+            \end{proof}
+
+        \item[(c)] Commutativity.
+            \begin{proof}
+                Let $m = [m_1, m_2]$, $n = [n_1, n_2]$. We have
+                \begin{gather*}
+                    m \cdot n = [m_1,m_2] \cdot [n_1,n_2] =\\=
+                    [m_1n_1 + m_2n_2, m_1n_2 + m_2n_1] = [n_1m_1 + n_2m_2, n_1m_2 + n_2m_1] =\\=
+                    [n_1,n_2] \cdot [m_1,m_2] = n \cdot m.
+                \end{gather*}
+            \end{proof}
+
+        \item[(d)] Multiplicative unit.
+            \begin{proof}
+                Let $m = [m_1, m_2]$. Then
+                \begin{gather*}
+                    m \cdot 1 = [m_1,m_2] \cdot [1,0] = [m_1 \cdot 1 + m_2 \cdot 0, m_1 \cdot 0 + m_2 \cdot 1] =\\=
+                    [m_1, m_2] = m.
+                \end{gather*}
+                Analogously, $1 \cdot m = m$. Now assume that $e \in \mathbb{Z}$ has the property that $m \cdot e = e \cdot m = m$ for all $m \in \mathbb{Z}$. We simply have $e = e \cdot 1 = 1$, and we are done.
+            \end{proof}
+
+        \item[(e)] Cancellation.
+            \begin{proof}
+                Let $m = [m_1,m_2]$, $n = [n_1,n_2]$, and $k = [k_1,k_2]$ be such that $m \cdot k = n \cdot k$ and $k_1 \ne k_2$. We have
+                \begin{align*}
+                    [m_1,m_2] \cdot [k_1,k_2] &= [n_1,n_2] \cdot [k_1,k_2],\\
+                    [m_1k_1+m_2k_2, m_1k_2+m_2k_1] &= [n_1k_1+n_2k_2, n_1k_2+n_2k_1],\\
+                    m_1k_1 + m_2k_2 + n_1k_2 + n_2k_1 &= n_1k_1 + n_2k_2 + m_1k_2 + m_2k_1,\\
+                    k_1(m_1+n_2) + k_2(m_2+n_1) &= k_1(m_2+n_1) + k_2(m_1+n_2),\\
+                \end{align*}
+            \end{proof}
+    \end{enumerate}
+\end{problem}
+
+\end{document}

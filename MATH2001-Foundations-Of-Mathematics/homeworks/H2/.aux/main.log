@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/nixos.org) (preloaded format=pdflatex 1980.1.1)  13 OCT 2024 15:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/nixos.org) (preloaded format=pdflatex 1980.1.1)  14 OCT 2024 15:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1175,8 +1175,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 5--6
 
  []
 
-LaTeX Font Info:    Trying to load font information for TS1+qcs on input line 2
-1.
+
+Overfull \hbox (5.66214pt too wide) in paragraph at lines 8--9
+[][]\OT1/qcs/b/n/12 Problem 1. []\OT1/qcs/m/it/12 Let $\OML/cmm/m/it/12 S$ \OT1
+/qcs/m/it/12 be a set and $\OML/cmm/m/it/12 f\U/MnSymbolC/m/n/12 ^^B \OML/cmm/m
+/it/12 A \U/MnSymbolA/m/n/12 ^^@ \OML/cmm/m/it/12 B$ \OT1/qcs/m/it/12 a map fro
+m $\OML/cmm/m/it/12 A$ \OT1/qcs/m/it/12 to $\OML/cmm/m/it/12 B$\OT1/qcs/m/it/12
+ . De-fine $\OML/cmm/m/it/12 f[] \U/MnSymbolC/m/n/12 ^^B []\OMX/MnSymbolE/m/n/1
+2 à\OML/cmm/m/it/12 B; S\OMX/MnSymbolE/m/n/12 ç \U/MnSymbolA/m/n/12 ^^@ []\OMX/
+MnSymbolE/m/n/12 à\OML/cmm/m/it/12 A; S\OMX/MnSymbolE/m/n/12 ç$
+ []
+
+
+Overfull \hbox (11.04904pt too wide) in paragraph at lines 34--35
+[]\OT1/qcs/m/n/12 Assume that $\OML/cmm/m/it/12 f$ \OT1/qcs/m/n/12 is sur-jec-t
+ive. Con-sider two func-tions $\OML/cmm/m/it/12 []$ \OT1/qcs/m/n/12 and $\OML/
+cmm/m/it/12 []$ \OT1/qcs/m/n/12 from $[]\OMX/MnSymbolE/m/n/12 à\OML/cmm/m/it/1
+2 B; S\OMX/MnSymbolE/m/n/12 ç$\OT1/qcs/m/n/12 ,
+ []
+
+LaTeX Font Info:    Trying to load font information for TS1+qcs on input line 6
+3.
 
 (/nix/store/2ggpvybv6px1gf4kifrc9ssk1fv3qfwj-texlive-combined-2023-texmfdist/te
 x/latex/tex-gyre/ts1qcs.fd
@@ -1186,66 +1205,57 @@ xmf-var/fonts/map/pdftex/updmap/pdftex.map}{/nix/store/2ggpvybv6px1gf4kifrc9ssk
 1fv3qfwj-texlive-combined-2023-texmfdist/fonts/enc/dvips/tex-gyre/q-rm.enc}
 
 {/nix/store/2ggpvybv6px1gf4kifrc9ssk1fv3qfwj-texlive-combined-2023-texmfdist/fo
-nts/enc/dvips/mnsymbol/MnSymbolE.enc}{/nix/store/2ggpvybv6px1gf4kifrc9ssk1fv3qf
-wj-texlive-combined-2023-texmfdist/fonts/enc/dvips/mnsymbol/MnSymbolC.enc}{/nix
+nts/enc/dvips/mnsymbol/MnSymbolC.enc}{/nix/store/2ggpvybv6px1gf4kifrc9ssk1fv3qf
+wj-texlive-combined-2023-texmfdist/fonts/enc/dvips/mnsymbol/MnSymbolA.enc}{/nix
 /store/2ggpvybv6px1gf4kifrc9ssk1fv3qfwj-texlive-combined-2023-texmfdist/fonts/e
-nc/dvips/mnsymbol/MnSymbolD.enc}{/nix/store/2ggpvybv6px1gf4kifrc9ssk1fv3qfwj-te
-xlive-combined-2023-texmfdist/fonts/enc/dvips/tex-gyre/q-ts1.enc}{/nix/store/2g
-gpvybv6px1gf4kifrc9ssk1fv3qfwj-texlive-combined-2023-texmfdist/fonts/enc/dvips/
-mnsymbol/MnSymbolA.enc}]
-Overfull \hbox (10.40137pt too wide) in paragraph at lines 68--70
-\OT1/qcs/m/n/12 meaning that $\OML/cmm/m/it/12 g$ \OT1/qcs/m/n/12 is sur-jec-ti
-ve. Now, con-sider two el-e-ments $\OML/cmm/m/it/12 b[]; b[] \U/MnSymbolD/m/n/1
-2 > \OML/cmm/m/it/12 B$ \OT1/qcs/m/n/12 such that $\OML/cmm/m/it/12 g\OMX/MnSym
-bolE/m/n/12 à\OML/cmm/m/it/12 b[]\OMX/MnSymbolE/m/n/12 ç \U/MnSymbolD/m/n/12 ^^
-@ \OML/cmm/m/it/12 g\OMX/MnSymbolE/m/n/12 à\OML/cmm/m/it/12 b[]\OMX/MnSymbolE/m
-/n/12 ç$\OT1/qcs/m/n/12 .
+nc/dvips/mnsymbol/MnSymbolE.enc}{/nix/store/2ggpvybv6px1gf4kifrc9ssk1fv3qfwj-te
+xlive-combined-2023-texmfdist/fonts/enc/dvips/mnsymbol/MnSymbolD.enc}]
+Overfull \hbox (11.68706pt too wide) in paragraph at lines 102--103
+[]\OT1/qcs/m/it/12 Define op-er-a-tions $\U/MnSymbolC/m/n/12 ^^T$ \OT1/qcs/m/it
+/12 and $\U/MnSymbolC/m/n/12 ^^@$ \OT1/qcs/m/it/12 on $\U/msb/m/n/12 Z\OMX/MnSy
+mbolE/m/n/12 ~\OML/cmm/m/it/12 n\U/msb/m/n/12 Z$ \OT1/qcs/m/it/12 such that the
+ qui-tient map $\OML/cmm/m/it/12 ^^Y$ \OT1/qcs/m/it/12 sat-is-fies $\OML/cmm/m/
+it/12 ^^Y\OMX/MnSymbolE/m/n/12 à\OML/cmm/m/it/12 a \U/MnSymbolC/m/n/12 ^^T \OML
+/cmm/m/it/12 b\OMX/MnSymbolE/m/n/12 ç \U/MnSymbolD/m/n/12 ^^@ \OML/cmm/m/it/12 
+^^Y\OMX/MnSymbolE/m/n/12 à\OML/cmm/m/it/12 a\OMX/MnSymbolE/m/n/12 ç \U/MnSymbol
+C/m/n/12 ^^T \OML/cmm/m/it/12 ^^Y\OMX/MnSymbolE/m/n/12 à\OML/cmm/m/it/12 b\OMX/
+MnSymbolE/m/n/12 ç$
  []
 
-[2] [3{/nix/store/2ggpvybv6px1gf4kifrc9ssk1fv3qfwj-texlive-combined-2023-texmfd
-ist/fonts/enc/dvips/mnsymbol/MnSymbolS.enc}]
-Overfull \hbox (32.19287pt too wide) detected at line 173
-[]
- []
-
-[4] (.aux/main.aux)
+[2{/nix/store/2ggpvybv6px1gf4kifrc9ssk1fv3qfwj-texlive-combined-2023-texmfdist/
+fonts/enc/dvips/tex-gyre/q-ts1.enc}] [3] [4] [5] (.aux/main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 28364 strings out of 474116
- 538895 string characters out of 5723056
- 1948187 words of memory out of 5000000
- 50178 multiletter control sequences out of 15000+600000
- 586816 words of font info for 80 fonts, out of 8000000 for 9000
+ 28343 strings out of 474116
+ 538601 string characters out of 5723056
+ 1949187 words of memory out of 5000000
+ 50169 multiletter control sequences out of 15000+600000
+ 586290 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 106i,18n,108p,565b,642s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 106i,12n,108p,543b,774s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </nix/store/2ggpvybv6px1gf4kifrc9ssk1fv3qfwj-texlive-combined-2023-texmfdist/
 fonts/type1/public/mnsymbol/MnSymbol12.pfb></nix/store/2ggpvybv6px1gf4kifrc9ssk
-1fv3qfwj-texlive-combined-2023-texmfdist/fonts/type1/public/mnsymbol/MnSymbol6.
+1fv3qfwj-texlive-combined-2023-texmfdist/fonts/type1/public/mnsymbol/MnSymbol8.
 pfb></nix/store/2ggpvybv6px1gf4kifrc9ssk1fv3qfwj-texlive-combined-2023-texmfdis
-t/fonts/type1/public/mnsymbol/MnSymbol8.pfb></nix/store/2ggpvybv6px1gf4kifrc9ss
-k1fv3qfwj-texlive-combined-2023-texmfdist/fonts/type1/public/amsfonts/cm/cmmi12
-.pfb></nix/store/2ggpvybv6px1gf4kifrc9ssk1fv3qfwj-texlive-combined-2023-texmfdi
-st/fonts/type1/public/amsfonts/cm/cmmi6.pfb></nix/store/2ggpvybv6px1gf4kifrc9ss
+t/fonts/type1/public/amsfonts/cm/cmmi12.pfb></nix/store/2ggpvybv6px1gf4kifrc9ss
 k1fv3qfwj-texlive-combined-2023-texmfdist/fonts/type1/public/amsfonts/cm/cmmi8.
 pfb></nix/store/2ggpvybv6px1gf4kifrc9ssk1fv3qfwj-texlive-combined-2023-texmfdis
 t/fonts/type1/public/amsfonts/cm/cmr12.pfb></nix/store/2ggpvybv6px1gf4kifrc9ssk
-1fv3qfwj-texlive-combined-2023-texmfdist/fonts/type1/public/amsfonts/cm/cmr6.pf
+1fv3qfwj-texlive-combined-2023-texmfdist/fonts/type1/public/amsfonts/cm/cmr8.pf
 b></nix/store/2ggpvybv6px1gf4kifrc9ssk1fv3qfwj-texlive-combined-2023-texmfdist/
-fonts/type1/public/amsfonts/cm/cmr8.pfb></nix/store/2ggpvybv6px1gf4kifrc9ssk1fv
-3qfwj-texlive-combined-2023-texmfdist/fonts/type1/public/amsfonts/symbols/msbm1
-0.pfb></nix/store/2ggpvybv6px1gf4kifrc9ssk1fv3qfwj-texlive-combined-2023-texmfd
-ist/fonts/type1/public/tex-gyre/qcsb.pfb></nix/store/2ggpvybv6px1gf4kifrc9ssk1f
-v3qfwj-texlive-combined-2023-texmfdist/fonts/type1/public/tex-gyre/qcsr.pfb></n
-ix/store/2ggpvybv6px1gf4kifrc9ssk1fv3qfwj-texlive-combined-2023-texmfdist/fonts
-/type1/public/tex-gyre/qcsri.pfb>
-Output written on .aux/main.pdf (4 pages, 219463 bytes).
+fonts/type1/public/amsfonts/symbols/msbm10.pfb></nix/store/2ggpvybv6px1gf4kifrc
+9ssk1fv3qfwj-texlive-combined-2023-texmfdist/fonts/type1/public/tex-gyre/qcsb.p
+fb></nix/store/2ggpvybv6px1gf4kifrc9ssk1fv3qfwj-texlive-combined-2023-texmfdist
+/fonts/type1/public/tex-gyre/qcsr.pfb></nix/store/2ggpvybv6px1gf4kifrc9ssk1fv3q
+fwj-texlive-combined-2023-texmfdist/fonts/type1/public/tex-gyre/qcsri.pfb>
+Output written on .aux/main.pdf (5 pages, 185339 bytes).
 PDF statistics:
- 142 PDF objects out of 1000 (max. 8388607)
- 101 compressed objects within 2 object streams
- 20 named destinations out of 1000 (max. 500000)
+ 108 PDF objects out of 1000 (max. 8388607)
+ 76 compressed objects within 1 object stream
+ 12 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
