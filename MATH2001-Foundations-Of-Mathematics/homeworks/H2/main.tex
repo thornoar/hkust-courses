@@ -201,8 +201,44 @@
                     [m_1,m_2] \cdot [k_1,k_2] &= [n_1,n_2] \cdot [k_1,k_2],\\
                     [m_1k_1+m_2k_2, m_1k_2+m_2k_1] &= [n_1k_1+n_2k_2, n_1k_2+n_2k_1],\\
                     m_1k_1 + m_2k_2 + n_1k_2 + n_2k_1 &= n_1k_1 + n_2k_2 + m_1k_2 + m_2k_1,\\
-                    k_1(m_1+n_2) + k_2(m_2+n_1) &= k_1(m_2+n_1) + k_2(m_1+n_2),\\
+                    k_1(m_1+n_2) + k_2(m_2+n_1) &= k_1(m_2+n_1) + k_2(m_1+n_2).\\
                 \end{align*}
+                Now we will need the following statement:
+                \begin{lemma*}
+                    For any two numbers $a_1, a_2 \in \mathbb{N}$, there is a number $b \in \mathbb{N}$ such that either $a_1 = a_2 + b$ or $a_2 = a_1 + b$.
+                \end{lemma*}
+                \begin{proof}
+                    We conduct a proof by induction over $a_1$.
+                    \begin{enumerate}
+                        \item[1.] $a_1 = 0$. Then, taking $b = a_2$, we have $a_2 = a_1 + b$.
+                        \item[2.] If the statement holds for $a_1$, it holds for $S(a_1)$. Let $a_2 \in \mathbb{N}$. Then there is a $b$ such that either $a_1 = a_2 + b$ or $a_2 = a_1 + b$. In the first case, take $b' = S(b)$. We have
+                        \[
+                            S(a_1) = S(a_2 + b) = a_2 + S(b) = a_2 + b'.
+                        \]
+                        In the second case, we handle two posiibilities:
+                            \begin{itemize}
+                                \item $b = 0$. Then take $b' = 1$, and write 
+                                \[
+                                    S(a_1) = S(a_2) = a_2 + 1 = a_2 + b'.
+                                \]
+                            \item $b = S(c), \ c \in \mathbb{N}$. Then take $b' = c$, and write
+                                \[
+                                    a_2 = a_1 + S(c) = S(a_1) = c = S(a_1) + b',
+                                \]
+                                q.e.d.
+                            \end{itemize}
+                    \end{enumerate}
+                \end{proof}
+
+                Now, without loss of generality, assume that $k_1 = k_2 + b$. We have
+                \begin{align*}
+                    (k_2 + b)(m_1 + n_2) + k_2(m_2 + n_1) &= (k_2 + b)(m_2 + n_1) + k_2(m_1 + n_2),\\
+                    k_2(m_1 + n_2) + b(m_1 + n_2) + k_2(m_2 + n_1) &= k_2(m_2 + n_1) + b(m_2 + n_1) + k_2(m_1 + n_2),\\
+                    b(m_1 + n_2) &= b(m_2 + n_1),\\
+                    m_1 + n_2 &= m_2 + n_1,\\
+                    [m_1,m_2] &= [n_1, n_2],
+                \end{align*}
+                q.e.d.
             \end{proof}
     \end{enumerate}
 \end{problem}

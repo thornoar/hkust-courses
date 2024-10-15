@@ -1,8 +1,8 @@
 # Fdb version 4
-["pdflatex"] 1728892700.04928 "./main.tex" "main.pdf" "main" 1728892701.40405 0
+["pdflatex"] 1729003717.25673 "./main.tex" "main.pdf" "main" 1729003718.54682 0
   "../template.tex" 1728835565.65718 873 f9fff933450b8eb51c2b3307d50f8587 ""
-  "./main.tex" 1728892699.77356 12713 486f64b37c6e6f5fc387d36fb5316afb ""
-  ".aux/main.aux" 1728892701.18763 232 b61d4e004e2e503e6be66edad8da8562 "pdflatex"
+  "./main.tex" 1729003647.16528 14842 cbc80bb7c0c81612acf9434454d4ceda ""
+  ".aux/main.aux" 1729003718.35456 232 b61d4e004e2e503e6be66edad8da8562 "pdflatex"
   "/home/ramak/projects/LaTeX-libraries/Graphics.tex" 1726929233.22781 594 c926ead8c5f949a4b468256d6360e479 ""
   "/home/ramak/projects/LaTeX-libraries/Math.tex" 1726929233.22881 9331 53de1034def1fe343cb62832c5d5dbec ""
   "/home/ramak/projects/LaTeX-libraries/Text.tex" 1726929896.74025 1614 4ce7121a4c478c0d98f06484f8cf658d ""
@@ -227,7 +227,7 @@
   "/nix/store/53i4kdgfsqphpq78gcqwidhl84nd07ai-texlive-combined-2023/share/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1 5467741 b45401220d23ad4052ee7aa1c9d22839 ""
   "/nix/store/53i4kdgfsqphpq78gcqwidhl84nd07ai-texlive-combined-2023/share/texmf-var/web2c/pdftex/pdflatex.fmt" 1 8221903 dc41026c94951fe60d8021b8f55bc941 ""
   "/nix/store/53i4kdgfsqphpq78gcqwidhl84nd07ai-texlive-combined-2023/share/texmf-var/web2c/texmf.cnf" 1 42803 761c03fe188929fcc77654103b800f77 ""
-  "main.tex" 1728892699.77356 12713 486f64b37c6e6f5fc387d36fb5316afb ""
+  "main.tex" 1729003647.16528 14842 cbc80bb7c0c81612acf9434454d4ceda ""
   (generated)
   ".aux/main.aux"
   ".aux/main.log"
